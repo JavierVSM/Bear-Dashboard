@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bear Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    </head>
+
+    <body>
+        <h1>
+            Edit the information of <%= bear.name %>
+        </h1>
+
+        <form action="/bears/:id'" method="POST">
+            <div>
+                <label for="name">
+                    Common Name:
+                </label>
+            </div>
+            <input type="text" name="name" id="name" value="<%= bear.name %>">
+            <div>
+                <label for="location">
+                    Geographic Habitat:
+                </label>
+            </div>
+            <input type="text" name="location" id="location" value="<%= bear.location %>">
+            <div>
+                <label for="color">
+                    Coat Color:
+                </label>
+            </div>
+            <input type="text" name="color" id="color" value="<%= bear.color %>">
+            <div>
+                <label for="description">
+                   Description:
+                </label>
+            </div>
+            <textarea name="description" id="description"><%= bear.description %></textarea> 
+            <div>
+                <button class="btn" type="submit"> 
+                    Change Bear
+                </button>
+            </div>           
+        </form>
+        <a href="/"><button class="btn">Cancel</button></a> 
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Bear Dashboard </title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    </head>
+    <body>
+        <h1>
+            Information about individual bear
+        </h1>
+        <div class="card">
+            <% if( found ){ %>
+                <h2>
+                    Common Name:<%= bear.name %>
+                </h2>
+                <h3><span>Geographic Habitat:</span><%= bear.location %></h3>
+                <h4><span>Coat Color:</span><%= bear.color %></h4>
+                <div><span>Description:</span><%= bear.description %> </div>
+            <% } else { %>
+                <h2>
+                    There is no bear with that name.
+                </h2>
+            <% } %>
+        </div>
+        <a href="/"><button class="btn">Go Back</button></a> 
+    </body>
+</html>

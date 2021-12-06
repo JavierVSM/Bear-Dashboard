@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bear Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    </head>
+
+    <body>
+        <h1>
+            Welcome to the Bear Dashboard
+        </h1>
+        <a href="/bears/new"><button class="btn">Add a Bear</button></a>
+
+        <h2>
+            All the Bears:
+        </h2>
+
+        <% for( let i = 0; i < bears.length; i ++ ){ %>
+            <div class="card">
+                <div><span>Common Name:</span><%= bears[i].name %></div>
+                <div><span>Geographic Habitat:</span><%= bears[i].location %></div>
+                <div><span>Coat Color:</span><%= bears[i].color %></div>
+                <div><span>Description:</span><%= bears[i].description %> </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="/bears/<%= bears[i].name %>"><button class="btn">See detail</button></a> 
+                            </td>
+                            <td>
+                                <a href="/bears/edit/<%=bears[i].name %>"><button class="btn">Edit</button></a> 
+                            </td>
+                            <td>
+                                <form action="/bears/destroy/<%= bears[i].name %>" method="POST">
+                                    <button class="btn" type="submit"> 
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <% } %>
+    </body>
+</html>
